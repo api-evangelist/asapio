@@ -1,0 +1,21 @@
+generated: '2026-10-16'
+method: probed
+source:
+  - https://asapio.com/privacy.php
+signals:
+  data_subject_request:
+    section: "Data Subject Rights"
+    note: Provides data subject right of appeal, indicating a data subject request process.
+    evidence:
+      - source: https://asapio.com/privacy.php
+        http_status: 200
+        fetched: /tmp/privacy.html
+        quote: "In the event of breaches of the GDPR, data subjects shall have a right of appeal to a supervisory authority, in particular in the Member State of their habitual residence, their place of work or the place of the alleged breach."
+  data_retention:
+    section: "Data Retention"
+    note: Describes retention period and deletion upon request.
+    evidence:
+      - source: https://asapio.com/privacy.php
+        http_status: 200
+        fetched: /tmp/privacy.html
+        quote: "Unless a more specific storage period has been specified within this privacy policy, your personal data will remain with us until the purpose for processing the data no longer applies. If you assert a legitimate request for deletion or revoke consent to data processing, your data will be deleted unless we have other legally permissible reasons for storing your personal data (e.g. retention periods under tax or commercial law); in the latter case, deletion will take place after these reasons cease to apply."

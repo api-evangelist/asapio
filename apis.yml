@@ -1,23 +1,112 @@
 aid: asapio
+
 name: ASAPIO
-description: 'ASAPIO is a company surfaced via the API Evangelist harvest backlog (source: g2-catalog)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: ASAPIO is an SAP Silver Partner specializing in SAP-to-cloud integration since 2003. The company provides the ASAPIO Integration
+  Add‑on that connects SAP S/4HANA and ECC to major cloud platforms such as Azure, AWS, Google Cloud, Kafka, and Solace in real‑time without custom
+  ABAP. Trusted by over 350 enterprises, ASAPIO offers pre‑built connectors, event‑driven architecture, and comprehensive documentation for developers
+  and integrators.
+
 url: https://raw.githubusercontent.com/api-evangelist/asapio/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:g2-catalog
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-16 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-16'
+
 modified: '2026-10-16'
+
 tags:
 - Company
-apis: []
+- SAP
+- Integration
+- Cloud
+- API
+- Enterprise
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/asapio-rules.yml
+- type: JSONLD
+  url: json-ld/asapio-context.jsonld
+- type: Vocabulary
+  url: vocabulary/asapio-vocabulary.yml
+- type: DataModel
+  url: data-model/asapio-data-model.yml
+- type: ChangeLog
+  url: changelog/asapio-changelog.yml
+- type: Conformance
+  url: conformance/asapio-conformance.yml
+- type: LLMsTxt
+  url: llms/asapio-llms.txt
+- type: Hosts
+  url: hosts/asapio-hosts.yml
+- type: TermsOfService
+  url: https://asapio.com/terms.php
+- type: PrivacyPolicy
+  url: https://asapio.com/privacy.php
+- type: DomainSecurity
+  url: security/asapio-domain-security.yml
 - type: Website
   url: https://asapio.com/
+- type: Documentation
+  url: https://asapio.com/docs/
+- type: GettingStarted
+  url: https://asapio.com/docs/getting-started.html
+- type: APIReference
+  url: https://asapio.com/docs/asyncapi/index.html
+- type: Support
+  url: https://asapio.com/contact.php
+- type: Blog
+  url: https://asapio.com/blog/
+
+apis:
+- name: ASAPIO Integration API
+  description: API for ASAPIO Integration Add‑on connecting SAP to cloud platforms.
+  humanURL: https://asapio.com/docs/
+  aid: asapio:asapio-integration-api
+- aid: asapio:asapio-api
+  name: ASAPIO API
+  description: 'ASAPIO API as documented publicly: 3 operations. Contract generated from the documentation by API Evangelist (2026-10-16); not
+
+    the provider''s own document.'
+  humanURL: https://asapio.com/docs/discovery-api/index.html
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/asapio-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/asapio-get-interfaceset-response-schema.json
+  - type: JSONSchema
+    url: json-schema/asapio-get-connectorset-response-schema.json
+  - type: JSONSchema
+    url: json-schema/asapio-get-connectionset-response-schema.json
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: Documentation pages exist but no OpenAPI, AsyncAPI, GraphQL, gRPC or WSDL contracts were found.
+  evidence:
+  - url: https://api.asapio.com/openapi.json
+    status: 0
+  - url: https://docs.asapio.com/openapi.json
+    status: 404
+  checked: '2026-10-16'
+x-enrichment:
+  date: '2026-10-16'
+  status: enriched
+  artifacts_added: 18
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

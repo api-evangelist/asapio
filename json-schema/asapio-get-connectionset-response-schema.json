@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/asapio/main/json-schema/asapio-get-connectionset-response-schema.json",
+  "title": "GetConnectionsetResponse",
+  "x-generated": "2026-10-16",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/asapio-openapi-generated.yml#/components/schemas/GetConnectionsetResponse",
+  "type": "object",
+  "properties": {
+    "ConnectionId": {
+      "type": "string",
+      "description": "ASAPIO instance identifier; primary navigation anchor"
+    },
+    "ConnectionType": {
+      "type": "string",
+      "description": "Connector type used by this connection"
+    },
+    "RFCDest": {
+      "type": "string",
+      "description": "RFC destination name"
+    },
+    "Hostname": {
+      "type": "string",
+      "description": "HTTP destinations only"
+    },
+    "Port": {
+      "type": "string",
+      "description": "HTTP destinations only"
+    },
+    "SSL": {
+      "type": "boolean",
+      "description": "HTTP destinations only"
+    }
+  }
+}

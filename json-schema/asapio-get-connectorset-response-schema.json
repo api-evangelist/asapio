@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/asapio/main/json-schema/asapio-get-connectorset-response-schema.json",
+  "title": "GetConnectorsetResponse",
+  "x-generated": "2026-10-16",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/asapio-openapi-generated.yml#/components/schemas/GetConnectorsetResponse",
+  "type": "object",
+  "properties": {
+    "ConnectorId": {
+      "type": "string",
+      "description": "Unique connector type identifier"
+    },
+    "isInstalled": {
+      "type": "boolean",
+      "description": "Always true ; non-installed connectors are excluded from results"
+    },
+    "isActive": {
+      "type": "boolean",
+      "description": "true if at least one connection uses this connector type"
+    },
+    "HeaderAttributes": {
+      "type": "string",
+      "description": "Comma-separated NAME=VALUE pairs"
+    },
+    "LoadType": {
+      "type": "string",
+      "description": "Outbound only: I (Incremental), P (Packed), F (Full load)"
+    },
+    "DataLayer": {
+      "type": "string",
+      "description": "Outbound only: ASAPIO Payload, Table/View, or Custom"
+    },
+    "ASAPIOPayload": {
+      "type": "string",
+      "description": "Outbound: payload view name"
+    },
+    "ASAPIOPayloadVersion": {
+      "type": "string",
+      "description": "Outbound: payload version"
+    },
+    "TableView": {
+      "type": "string",
+      "description": "Outbound: table or view name"
+    }
+  }
+}

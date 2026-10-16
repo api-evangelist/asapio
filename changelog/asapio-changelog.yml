@@ -1,0 +1,42 @@
+generated: '2026-10-16'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://asapio.com/docs/changelog-feed.php
+sources:
+- https://asapio.com/docs/changelog-feed.php
+- https://asapio.com/docs/changelog-subscribe.html
+- https://asapio.com/docs/changelog.html
+- https://asapio.com/integration/pi-po-migration.html
+entries:
+- breaking: false
+  highlights:
+  - Event Studio MCP Server. Configure, deploy and monitor interfaces from MCP‑compatible AI clients such as Claude, with separate reader and
+    writer role collections.
+  - AI Assistant on SAP AI Core. The AI Assistant sidebar can now use SAP AI Core as its model provider.
+  - 'Dynamic topic builder. Topics are now easier to build: compose the outbound topic from segments directly in the Create Interface or Deployment
+    screen – a fixed value, a field from the SAP document, or the result of a conversion class/method.'
+  - Undeploy interfaces. Interfaces can now be undeployed directly from the deployment page, right next to Deploy – no manual backend step needed
+    to take an interface out of service.
+  date: '2026-10-01'
+- breaking: false
+  highlights:
+  - Solace Event Portal Integration. Publishes schemas, topics, and queues to Solace Event Portal via the Solace API from the backend for stronger
+    discoverability.
+  - Discovery API. A new open integration surface for all connectors, with a dedicated integration cockpit and support for custom integrations.
+  - AI Agent for configuration support. The first AI agent helps configure Event Studio setups faster and with fewer manual steps.
+  - Expanded Content Catalog. More RAP Event Handler classes and additional standard events are delivered with customizing.
+  date: '2026-07-01'
+- breaking: false
+  highlights:
+  - SASL/PLAIN Authentication for Kafka and Confluent. Secures Kafka/Confluent connections via username and password instead of certificates the
+    widely adopted authentication mechanism for enterprise environments without certificate infrastructure.
+  - Schema Registry support for Kafka and Confluent. Integrates connectors with a central Schema Registry to validate messages against defined
+    formats before sending, reducing integration errors and improving data reliability across producers and consumers.
+  - Direct Sequencing of RAP Event Data. Enables direct RAP event utilization without a preliminary data extraction step. The outbox pattern ensures
+    correct message sequencing even in multi‑threaded scenarios.
+  - RAP Event Linkage in Classic GUI (without Event Studio). Supports RAP event configuration through classic SAP GUI screens for teams that prefer
+    or require legacy transaction access over Event Studio.
+  date: '2026-04-01'
+current_version: '9.32610'
+note: Versioning scheme not explicitly stated on the pages.
+docs: https://asapio.com/docs/changelog-feed.php

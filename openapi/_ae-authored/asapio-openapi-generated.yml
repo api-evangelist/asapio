@@ -1,0 +1,225 @@
+openapi: 3.1.0
+info:
+  title: ASAPIO API
+  version: '2026-10-16'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-16: 3 operation(s) read from 1 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; ASAPIO has published no machine-readable contract that the pipeline
+    could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 3
+    pages-with-code: 0
+    pages-read: 1
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-16'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://asapio.com/docs/discovery-api/index.html
+paths:
+  /ConnectionSet:
+    get:
+      operationId: get_ConnectionSet
+      tags:
+      - Connectionset
+      summary: List connections
+      x-source: https://asapio.com/docs/discovery-api/index.html
+      parameters:
+      - name: $filter
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Optional filter
+      - name: $top
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Paging top
+      - name: $skip
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Paging skip
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetConnectionsetResponse'
+      x-evidence:
+        kind: documentation
+  /ConnectorSet:
+    get:
+      operationId: get_ConnectorSet
+      tags:
+      - Connectorset
+      summary: List installed connectors
+      x-source: https://asapio.com/docs/discovery-api/index.html
+      parameters:
+      - name: $filter
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Supports $filter by ConnectionId or InterfaceId
+      - name: $top
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Paging top
+      - name: $skip
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Paging skip
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetConnectorsetResponse'
+      x-evidence:
+        kind: documentation
+  /InterfaceSet:
+    get:
+      operationId: get_InterfaceSet
+      tags:
+      - Interfaceset
+      summary: List all interfaces
+      x-source: https://asapio.com/docs/discovery-api/index.html
+      parameters:
+      - name: $filter
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Supports $filter by ConnectionId (recommended for large landscapes) or InterfaceId
+      - name: $top
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Paging top
+      - name: $skip
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Paging skip
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetInterfacesetResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    GetConnectionsetResponse:
+      type: object
+      properties:
+        ConnectionId:
+          type: string
+          description: ASAPIO instance identifier; primary navigation anchor
+        ConnectionType:
+          type: string
+          description: Connector type used by this connection
+        RFCDest:
+          type: string
+          description: RFC destination name
+        Hostname:
+          type: string
+          description: HTTP destinations only
+        Port:
+          type: string
+          description: HTTP destinations only
+        SSL:
+          type: boolean
+          description: HTTP destinations only
+    GetConnectorsetResponse:
+      type: object
+      properties:
+        ConnectorId:
+          type: string
+          description: Unique connector type identifier
+        isInstalled:
+          type: boolean
+          description: Always true ; non-installed connectors are excluded from results
+        isActive:
+          type: boolean
+          description: true if at least one connection uses this connector type
+        HeaderAttributes:
+          type: string
+          description: Comma-separated NAME=VALUE pairs
+        LoadType:
+          type: string
+          description: 'Outbound only: I (Incremental), P (Packed), F (Full load)'
+        DataLayer:
+          type: string
+          description: 'Outbound only: ASAPIO Payload, Table/View, or Custom'
+        ASAPIOPayload:
+          type: string
+          description: 'Outbound: payload view name'
+        ASAPIOPayloadVersion:
+          type: string
+          description: 'Outbound: payload version'
+        TableView:
+          type: string
+          description: 'Outbound: table or view name'
+    GetInterfacesetResponse:
+      type: object
+      properties:
+        InterfaceId:
+          type: string
+          description: Interface identifier
+        ConnectionId:
+          type: string
+          description: Parent connection; primary filter key
+        Direction:
+          type: string
+          description: Inbound or Outbound
+        MessageType:
+          type: string
+          description: SAP message or event type
+        lastRun:
+          type: string
+          description: Timestamp of last execution
+        isActive:
+          type: boolean
+          description: Activation status (see determination logic above)
+        Events:
+          type: string
+          description: Comma-separated linked events; always populated regardless of isActive
+        HeaderAttributes:
+          type: string
+          description: Comma-separated NAME=VALUE pairs; always populated
+        LoadType:
+          type: string
+          description: 'Outbound only: I , P , or F'
+        DataLayer:
+          type: string
+          description: 'Outbound only: ASAPIO Payload, Table/View, or Custom'
+        ASAPIOPayload:
+          type: string
+          description: 'Outbound: payload view name'
+        ASAPIOPayloadVersion:
+          type: string
+          description: 'Outbound: payload version'
+        TableView:
+          type: string
+          description: 'Outbound: table or view name'
+tags:
+- name: Connectionset
+- name: Connectorset
+- name: Interfaceset

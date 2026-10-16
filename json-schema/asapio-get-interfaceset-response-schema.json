@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/asapio/main/json-schema/asapio-get-interfaceset-response-schema.json",
+  "title": "GetInterfacesetResponse",
+  "x-generated": "2026-10-16",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/asapio-openapi-generated.yml#/components/schemas/GetInterfacesetResponse",
+  "type": "object",
+  "properties": {
+    "InterfaceId": {
+      "type": "string",
+      "description": "Interface identifier"
+    },
+    "ConnectionId": {
+      "type": "string",
+      "description": "Parent connection; primary filter key"
+    },
+    "Direction": {
+      "type": "string",
+      "description": "Inbound or Outbound"
+    },
+    "MessageType": {
+      "type": "string",
+      "description": "SAP message or event type"
+    },
+    "lastRun": {
+      "type": "string",
+      "description": "Timestamp of last execution"
+    },
+    "isActive": {
+      "type": "boolean",
+      "description": "Activation status (see determination logic above)"
+    },
+    "Events": {
+      "type": "string",
+      "description": "Comma-separated linked events; always populated regardless of isActive"
+    },
+    "HeaderAttributes": {
+      "type": "string",
+      "description": "Comma-separated NAME=VALUE pairs; always populated"
+    },
+    "LoadType": {
+      "type": "string",
+      "description": "Outbound only: I , P , or F"
+    },
+    "DataLayer": {
+      "type": "string",
+      "description": "Outbound only: ASAPIO Payload, Table/View, or Custom"
+    },
+    "ASAPIOPayload": {
+      "type": "string",
+      "description": "Outbound: payload view name"
+    },
+    "ASAPIOPayloadVersion": {
+      "type": "string",
+      "description": "Outbound: payload version"
+    },
+    "TableView": {
+      "type": "string",
+      "description": "Outbound: table or view name"
+    }
+  }
+}
