@@ -1,0 +1,88 @@
+openapi: 3.2.0
+info:
+  title: ASAPIO Connectorset API
+  version: '2026-10-16'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-16: 3 operation(s) read from 1 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; ASAPIO has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 3
+    pages-with-code: 0
+    pages-read: 1
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-16'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://asapio.com/docs/discovery-api/index.html
+tags:
+- name: Connectorset
+paths:
+  /ConnectorSet:
+    get:
+      operationId: get_ConnectorSet
+      tags:
+      - Connectorset
+      summary: List installed connectors
+      x-source: https://asapio.com/docs/discovery-api/index.html
+      parameters:
+      - name: $filter
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Supports $filter by ConnectionId or InterfaceId
+      - name: $top
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Paging top
+      - name: $skip
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Paging skip
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetConnectorsetResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    GetConnectorsetResponse:
+      type: object
+      properties:
+        ConnectorId:
+          type: string
+          description: Unique connector type identifier
+        isInstalled:
+          type: boolean
+          description: Always true ; non-installed connectors are excluded from results
+        isActive:
+          type: boolean
+          description: true if at least one connection uses this connector type
+        HeaderAttributes:
+          type: string
+          description: Comma-separated NAME=VALUE pairs
+        LoadType:
+          type: string
+          description: 'Outbound only: I (Incremental), P (Packed), F (Full load)'
+        DataLayer:
+          type: string
+          description: 'Outbound only: ASAPIO Payload, Table/View, or Custom'
+        ASAPIOPayload:
+          type: string
+          description: 'Outbound: payload view name'
+        ASAPIOPayloadVersion:
+          type: string
+          description: 'Outbound: payload version'
+        TableView:
+          type: string
+          description: 'Outbound: table or view name'

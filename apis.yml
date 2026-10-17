@@ -77,23 +77,51 @@ apis:
   description: API for ASAPIO Integration Add‑on connecting SAP to cloud platforms.
   humanURL: https://asapio.com/docs/
   aid: asapio:asapio-integration-api
-- aid: asapio:asapio-api
-  name: ASAPIO API
-  description: 'ASAPIO API as documented publicly: 3 operations. Contract generated from the documentation by API Evangelist (2026-10-16); not
-
-    the provider''s own document.'
-  humanURL: https://asapio.com/docs/discovery-api/index.html
+- aid: asapio:asapio-connectionset-api
+  name: ASAPIO Connectionset API
+  description: The Connectionset API from ASAPIO — 1 operation(s) for connectionset.
+  humanURL: https://asapio.com/docs/
+  tags:
+  - Connectionset
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/asapio-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/asapio-connectionset-api-openapi.yml
   - type: JSONSchema
     url: json-schema/asapio-get-interfaceset-response-schema.json
   - type: JSONSchema
     url: json-schema/asapio-get-connectorset-response-schema.json
   - type: JSONSchema
     url: json-schema/asapio-get-connectionset-response-schema.json
-
+- aid: asapio:asapio-connectorset-api
+  name: ASAPIO Connectorset API
+  description: The Connectorset API from ASAPIO — 1 operation(s) for connectorset.
+  humanURL: https://asapio.com/docs/
+  tags:
+  - Connectorset
+  properties:
+  - type: OpenAPI
+    url: openapi/asapio-connectorset-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/asapio-get-interfaceset-response-schema.json
+  - type: JSONSchema
+    url: json-schema/asapio-get-connectorset-response-schema.json
+  - type: JSONSchema
+    url: json-schema/asapio-get-connectionset-response-schema.json
+- aid: asapio:asapio-interfaceset-api
+  name: ASAPIO Interfaceset API
+  description: The Interfaceset API from ASAPIO — 1 operation(s) for interfaceset.
+  humanURL: https://asapio.com/docs/
+  tags:
+  - Interfaceset
+  properties:
+  - type: OpenAPI
+    url: openapi/asapio-interfaceset-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/asapio-get-interfaceset-response-schema.json
+  - type: JSONSchema
+    url: json-schema/asapio-get-connectorset-response-schema.json
+  - type: JSONSchema
+    url: json-schema/asapio-get-connectionset-response-schema.json
 x-coverage:
   state: unreadable
   reason: no-machine-readable-spec
